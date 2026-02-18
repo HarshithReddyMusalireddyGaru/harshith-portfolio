@@ -4,166 +4,296 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Harshith Reddy | AI/ML Data Scientist</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css?v=10" />
 </head>
 
 <body>
-
-<header class="nav-wrap">
-  <nav class="nav container">
-    <a class="brand" href="#home">
-      <span class="brand-dot"></span>
-      <span>Harshith Reddy</span>
-    </a>
-
-    <ul class="nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li>
-        <a class="btn btn-small btn-accent"
-           href="Harshith_Data%20Scientist.docx"
-           download>
-           Download CV
-        </a>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="container hero-grid">
-    <div>
-      <p class="kicker">Hello, I'm</p>
-      <h1>Harshith Reddy<br>
-        <span class="muted">AI/ML Data Scientist</span>
-      </h1>
-
-      <p class="lead">
-        I build ML, NLP, and GenAI-assisted solutions -
-        specialized in healthcare identity resolution,
-        embeddings, semantic search, and production ML on AWS/Azure.
-      </p>
-
-      <a class="btn btn-accent" href="#portfolio">View My Work</a>
-    </div>
-
-    <div class="hero-photo">
-      <img src="Harshith3.jpeg" alt="Harshith Reddy">
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="section">
-  <div class="container">
-    <h2>My Expertise</h2>
-
-    <div class="cards-3">
-      <div class="card">
-        <div class="icon">AI</div>
-        <h3>AI / ML Modeling</h3>
-        <p>Supervised & ensemble models, feature engineering, evaluation and tuning.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">NLP</div>
-        <h3>GenAI & NLP</h3>
-        <p>Transformers, embeddings, semantic search and LLM-assisted workflows.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">Cloud</div>
-        <h3>Production ML</h3>
-        <p>Deployment, monitoring, drift detection and scaling on AWS/Azure.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio" class="section">
-  <div class="container">
-    <h2>Projects</h2>
-
-    <div class="cards-3">
-      <div class="card">
-        <img class="work-thumb-img" src="portfolio/healthcare-identity.png">
-        <h3>Healthcare Identity Resolution</h3>
-        <p>Embeddings + similarity search for scalable entity matching.</p>
-      </div>
-
-      <div class="card">
-        <img class="work-thumb-img" src="portfolio/enterprise-analytics.png">
-        <h3>Enterprise Analytics</h3>
-        <p>Predictive insights + stakeholder dashboards.</p>
-      </div>
-
-      <div class="card">
-        <img class="work-thumb-img" src="portfolio/llm-standardization.png">
-        <h3>LLM-Assisted Data Standardization</h3>
-        <p>Automated enrichment + rule generation for data quality.</p>
-      </div>
-
-      <div class="card">
-        <img class="work-thumb-img" src="portfolio/customer-churn.png">
-        <h3>Customer Churn Model</h3>
-        <p>Classification pipeline with monitoring & explainability.</p>
-      </div>
-
-      <div class="card">
-        <img class="work-thumb-img" src="portfolio/model-monitoring.png">
-        <h3>Model Monitoring & Drift Detection</h3>
-        <p>Performance metrics and alerting system.</p>
-      </div>
-
-      <div class="card">
-        <img class="work-thumb-img" src="portfolio/executive-kpi.png">
-        <h3>Executive KPI Dashboard</h3>
-        <p>Clean BI design for decision-ready insights.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section alt">
-  <div class="container">
-    <h2>Let's build something impactful</h2>
-
-    <p>
-      Email:
-      <a href="mailto:harshithreddymr25@gmail.com">
-        harshithreddymr25@gmail.com
+  <!-- NAV -->
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="#home">
+        <span class="brand-dot"></span>
+        <span>Harshith Reddy</span>
       </a>
-    </p>
 
-    <form class="form" id="contactForm">
-      <p id="formStatus" style="display:none; font-weight:700;"></p>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
 
-      <div class="row">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="you@example.com" required />
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-cta">
+          <a class="btn btn-small btn-accent" href="Harshith_Data%20Scientist.docx" download>Download CV</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="dots"></div>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="wave"></div>
+
+    <div class="container hero-grid">
+      <div>
+        <p class="kicker">Hello, I’m</p>
+        <h1>Harshith Reddy<br><span class="muted">AI/ML Data Scientist</span></h1>
+
+        <p class="lead">
+          I build ML, NLP, and GenAI-assisted solutions—specialized in healthcare identity resolution,
+          embeddings, semantic search, and production ML on AWS/Azure.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-accent" href="#portfolio">Get Started</a>
+          <a class="btn btn-ghost" href="#contact">Let’s Talk</a>
+        </div>
+
+        <div class="hero-badges">
+          <div class="badge">
+            <div class="badge-title">Trusted by teams</div>
+            <div class="avatar-row">
+              <span class="avatar"></span>
+              <span class="avatar"></span>
+              <span class="avatar"></span>
+              <span class="avatar"></span>
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-num">4+</div>
+            <div class="stat-text">Years<br/>Experience</div>
+          </div>
+        </div>
       </div>
 
-      <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-photo">
+            <!-- Use your real headshot here -->
+            <img src="Harshith3.jpeg" alt="Harshith Reddy headshot" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <button class="btn btn-accent" type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">SERVICES</p>
+        <h2>Expertise you can rely on</h2>
+        <p class="subtext">Clear, production-ready ML solutions—from data to deployment.</p>
+      </div>
 
-<footer class="footer">
-  <div class="container">
-    <p>© 2025 Harshith Reddy</p>
-  </div>
-</footer>
+      <div class="cards-3">
+        <article class="card">
+          <div class="icon">🤖</div>
+          <h3>AI / ML Modeling</h3>
+          <p>Supervised models, feature engineering, evaluation, and tuning for business impact.</p>
+        </article>
 
-<script src="script.js?v=6"></script>
+        <article class="card featured">
+          <div class="icon">🧠</div>
+          <h3>GenAI & NLP</h3>
+          <p>Transformers, embeddings, semantic search, entity resolution, and LLM-assisted workflows.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">☁️</div>
+          <h3>Production ML</h3>
+          <p>ML pipelines, deployment, monitoring, drift detection, and cloud scaling on AWS/Azure.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT (keep your current content, this is a clean placeholder) -->
+  <section id="about" class="section alt">
+    <div class="container about-grid">
+      <div class="about-photo">
+        <img src="Harshith2.jpg" alt="Harshith Reddy" />
+      </div>
+
+      <div>
+        <p class="eyebrow">ABOUT</p>
+        <h2>Designing solutions, not just visuals</h2>
+        <p class="subtext">
+          I work across data, modeling, and MLOps to ship reliable ML systems end-to-end.
+        </p>
+
+        <ul class="checklist">
+          <li>Healthcare identity resolution & entity matching</li>
+          <li>Embedding-based retrieval and semantic search</li>
+          <li>Production ML on AWS/Azure with monitoring</li>
+        </ul>
+
+        <div class="about-cta">
+          <a class="btn btn-accent" href="#contact">Contact</a>
+          <div class="mini-card">
+            <div class="mini-title">Open to roles</div>
+            <div class="mini-text">AI/ML • NLP • MLOps</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO (THIS IS WHERE 6 IMAGES ARE USED) -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">PORTFOLIO</p>
+        <h2>Digital Product Showcases</h2>
+      </div>
+
+      <div class="filter">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="ai">AI</button>
+        <button class="chip" data-filter="nlp">NLP</button>
+        <button class="chip" data-filter="mlops">MLOps</button>
+        <button class="chip" data-filter="dash">Dashboards</button>
+      </div>
+
+      <div class="grid" id="portfolioGrid">
+        <article class="work" data-tags="ai nlp mlops">
+          <img class="work-thumb-img" src="portfolio/healthcare-identity.png" alt="Healthcare Identity Resolution" loading="lazy" />
+          <h3>Healthcare Identity Resolution</h3>
+          <p>Embeddings + similarity search for scalable entity matching.</p>
+        </article>
+
+        <article class="work" data-tags="ai dash">
+          <img class="work-thumb-img" src="portfolio/enterprise-analytics.png" alt="Enterprise Analytics" loading="lazy" />
+          <h3>Enterprise Analytics</h3>
+          <p>Predictive insights + stakeholder dashboards (Power BI/Tableau).</p>
+        </article>
+
+        <article class="work" data-tags="ai nlp">
+          <img class="work-thumb-img" src="portfolio/llm-standardization.png" alt="LLM-Assisted Data Standardization" loading="lazy" />
+          <h3>LLM-Assisted Data Standardization</h3>
+          <p>Automated enrichment + rule generation for improved data quality.</p>
+        </article>
+
+        <article class="work" data-tags="ai">
+          <img class="work-thumb-img" src="portfolio/customer-churn.png" alt="Customer Churn Model" loading="lazy" />
+          <h3>Customer Churn Model</h3>
+          <p>Classification pipeline with explainability and monitoring.</p>
+        </article>
+
+        <article class="work" data-tags="mlops">
+          <img class="work-thumb-img" src="portfolio/model-monitoring.png" alt="Model Monitoring & Drift Detection" loading="lazy" />
+          <h3>Model Monitoring & Drift Detection</h3>
+          <p>Metrics, alerts, and continuous performance tuning.</p>
+        </article>
+
+        <article class="work" data-tags="dash">
+          <img class="work-thumb-img" src="portfolio/executive-kpi.png" alt="Executive KPI Dashboard" loading="lazy" />
+          <h3>Executive KPI Dashboard</h3>
+          <p>Clean BI design for decision-ready insights.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta-grid">
+      <div>
+        <h2>Got a Project? Let’s Talk</h2>
+        <p>Reach out and I’ll respond with next steps and a quick plan.</p>
+        <a class="btn btn-accent" href="#contact">Contact</a>
+      </div>
+      <div class="cta-photo">
+        <img src="Harshith1.jpg" alt="CTA photo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container contact-grid">
+      <div class="contact-left">
+        <p class="eyebrow">CONTACT</p>
+        <h2>Let’s build something impactful</h2>
+
+        <p class="subtext">
+          Email: <a href="mailto:harshithreddymr25@gmail.com">harshithreddymr25@gmail.com</a><br/>
+          Phone: <a href="tel:+18173818034">+1 (817) 381-8034</a><br/>
+          LinkedIn: <a href="https://www.linkedin.com/in/harshith-reddy-musalireddy-garu-9ab74019b/" target="_blank" rel="noreferrer">View Profile</a>
+        </p>
+
+        <!-- WORKING FORM -->
+        <form class="form" id="contactForm">
+          <p id="formStatus" style="display:none; font-weight:800; margin:0 0 10px;"></p>
+
+          <div class="row">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+          </div>
+
+          <label>
+            Message
+            <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </label>
+
+          <button class="btn btn-accent" type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <aside class="subscribe">
+        <p class="eyebrow">SUBSCRIBE</p>
+        <h3>Subscribe to get updates</h3>
+        <p class="subtext">Optional section—can be removed later.</p>
+
+        <div class="subscribe-form">
+          <input type="email" placeholder="Enter your email" />
+          <button class="btn btn-accent" type="button">Subscribe</button>
+        </div>
+
+        <div class="info-box">
+          <h4>Quick facts</h4>
+          <ul>
+            <li>AI/ML • NLP • MLOps</li>
+            <li>AWS/Azure deployment</li>
+            <li>Dashboards & analytics</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> Harshith Reddy</div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=10"></script>
 </body>
 </html>
