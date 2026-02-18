@@ -649,18 +649,3 @@ img{ max-width:100%; display:block; }
   .nav-cta a{ width:100%; justify-content:center; }
   .row{ grid-template-columns: 1fr; }
 }
-/* Fix hero blobs covering the image */
-.hero-right,
-.hero-card,
-.hero-photo {
-  position: relative;
-  z-index: 5;
-}
-
-.blob,
-.dots,
-.wave,
-.hero-bg {
-  z-index: 0 !important;
-  pointer-events: none;
-}
