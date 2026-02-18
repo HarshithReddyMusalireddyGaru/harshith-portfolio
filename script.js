@@ -7,7 +7,6 @@ if (navToggle && navLinks) {
     navLinks.classList.toggle("open");
   });
 
-  // close menu after clicking a link (mobile)
   navLinks.querySelectorAll("a").forEach((a) => {
     a.addEventListener("click", () => navLinks.classList.remove("open"));
   });
@@ -63,6 +62,7 @@ if (contactForm) {
         formStatus.style.color = "#2f9e44";
         formStatus.textContent = "✅ Message sent! I will get back to you soon.";
       }
+
       contactForm.reset();
     } catch (err) {
       if (formStatus) {
