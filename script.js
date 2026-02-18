@@ -1,57 +1,78 @@
-// Mobile menu toggle
-const toggle = document.getElementById("navToggle");
-const links = document.getElementById("navLinks");
+// ===== NAV TOGGLE (mobile) =====
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
 
-toggle?.addEventListener("click", () => {
-  const open = links.classList.toggle("open");
-  toggle.setAttribute("aria-expanded", String(open));
-});
-
-// Close mobile menu when clicking a link
-document.querySelectorAll("#navLinks a").forEach(a => {
-  a.addEventListener("click", () => {
-    links.classList.remove("open");
-    toggle.setAttribute("aria-expanded", "false");
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
   });
-});
 
-// Active link highlight on scroll (simple)
-const sections = ["home", "about", "services", "portfolio", "contact"].map(id => document.getElementById(id));
-const navAnchors = Array.from(document.querySelectorAll(".nav-links a"))
-  .filter(a => a.getAttribute("href")?.startsWith("#"));
-
-const setActive = () => {
-  const scrollY = window.scrollY + 110;
-  let current = "home";
-  for (const s of sections) {
-    if (!s) continue;
-    if (s.offsetTop <= scrollY) current = s.id;
-  }
-  navAnchors.forEach(a => {
-    const href = a.getAttribute("href")?.replace("#", "");
-    a.classList.toggle("active", href === current);
+  // close menu after clicking a link (mobile)
+  navLinks.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => navLinks.classList.remove("open"));
   });
-};
-window.addEventListener("scroll", setActive);
-setActive();
+}
 
-// Portfolio filter
+// ===== PORTFOLIO FILTER =====
 const chips = document.querySelectorAll(".chip");
 const works = document.querySelectorAll(".work");
 
-chips.forEach(chip => {
+chips.forEach((chip) => {
   chip.addEventListener("click", () => {
-    chips.forEach(c => c.classList.remove("active"));
+    chips.forEach((c) => c.classList.remove("active"));
     chip.classList.add("active");
+
     const filter = chip.dataset.filter;
 
-    works.forEach(w => {
+    works.forEach((w) => {
       const tags = (w.dataset.tags || "").split(" ");
       const show = filter === "all" || tags.includes(filter);
-      w.style.display = show ? "block" : "none";
+      w.style.display = show ? "" : "none";
     });
   });
 });
 
-// Footer year
-document.getElementById("year").textContent = new Date().getFullYear();
+// ===== CONTACT FORM (Formspree) =====
+const FORM_ENDPOINT = "https://formspree.io/f/xqedldlv";
+
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (formStatus) {
+      formStatus.style.display = "block";
+      formStatus.style.color = "#0b1220";
+      formStatus.textContent = "Sending...";
+    }
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (!response.ok) throw new Error("Request failed");
+
+      if (formStatus) {
+        formStatus.style.color = "#2f9e44";
+        formStatus.textContent = "✅ Message sent! I will get back to you soon.";
+      }
+      contactForm.reset();
+    } catch (err) {
+      if (formStatus) {
+        formStatus.style.color = "#d9480f";
+        formStatus.textContent = "❌ Something went wrong. Please try again.";
+      }
+    }
+  });
+}
+
+// ===== FOOTER YEAR =====
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
